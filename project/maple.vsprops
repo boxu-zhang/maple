@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="maple"
+	OutputDirectory="$(ConfigurationName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(SolutionDir)/include"
+	/>
+	<Tool
+		Name="VCLibrarianTool"
+		OutputFile="$(OutDir)\mp_$(ProjectName).lib"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		OutputFile="$(OutDir)\mp_$(ProjectName).exe"
+		AdditionalLibraryDirectories="$(SolutionDir)/lib/$(ConfigurationName)"
+		ImportLibrary="$(OutDir)\mp_$(ProjectName).lib"
+	/>
+	<Tool
+		Name="VCPostBuildEventTool"
+		CommandLine="if exist &quot;$(OutDir)\mp_$(ProjectName).exe&quot; copy &quot;$(OutDir)\mp_$(ProjectName).exe&quot; &quot;$(SolutionDir)bin\$(ConfigurationName)&quot;&#x0D;&#x0A;if exist &quot;$(OutDir)\mp_$(ProjectName).dll&quot; copy &quot;$(OutDir)\mp_$(ProjectName).dll&quot; &quot;$(SolutionDir)bin\$(ConfigurationName)&quot;&#x0D;&#x0A;if exist &quot;$(OutDir)\mp_$(ProjectName).lib&quot; copy &quot;$(OutDir)\mp_$(ProjectName).lib&quot; &quot;$(SolutionDir)lib\$(ConfigurationName)&quot;&#x0D;&#x0A;if exist &quot;$(OutDir)\mp_$(ProjectName).pdb&quot; copy &quot;$(OutDir)\mp_$(ProjectName).pdb&quot; &quot;$(SolutionDir)bin\$(ConfigurationName)&quot;"
+	/>
+</VisualStudioPropertySheet>
